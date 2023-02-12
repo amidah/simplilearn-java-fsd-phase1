@@ -3,6 +3,7 @@ package com.simplilearn.multithreading;
 public class DeadlockSolution {
 
 	public static void main(String[] args) {
+		
 		DeadlockSolution dls = new DeadlockSolution();
 		final resource1 rs1 = dls.new resource1();
 		final resource2 rs2 = dls.new resource2();
@@ -46,6 +47,9 @@ public class DeadlockSolution {
 		
 		new Thread(r1).start();
 		new Thread(r2).start();
+System.out.println("111");
+	    System.out.flush(); 
+	
 	}
 	
 private class resource1 {
