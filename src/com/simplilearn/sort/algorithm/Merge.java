@@ -2,23 +2,30 @@ package com.simplilearn.sort.algorithm;
 
 public class Merge {
 
-	  void merge(int a[], int beg, int mid, int end){
+	  /**
+	 * @param a
+	 * @param beg
+	 * @param mid
+	 * @param end
+	 */
+	void merge(int a[], int beg, int mid, int end){
 
 	    int i, j, k;
 	    int lenArr1 = mid - beg + 1;
 	    int lenArr2 = end - mid;
 
-	    int leftArr[] = new int[lenArr1];
+	    int leftArr[] = new int[lenArr1]; // declared and instantiated
 	    int rightArr[] = new int[lenArr2];
 
 	    for(i = 0; i < lenArr1; i++){
-	      leftArr[i] = a[beg + i];
+	      leftArr[i] = a[beg + i]; // initializing
 	    }
 
 	    for(j = 0; j < lenArr2; j++){
 	      rightArr[j] = a[mid + 1 + j];
 	    }
 
+	    
 	    i = 0;
 	    j = 0;
 	    k = beg;
@@ -52,13 +59,13 @@ public class Merge {
 	    }
 	  }
 
-	  void mergeSort(int a[], int beg, int end)
+	  void mergeSort(int a[], int beg, int end) // a -> arr, beg - 0, end - 7
 	  {
 	    if (beg < end)
 	    {
-	      int mid = (beg + end) / 2;
-	      mergeSort(a, beg, mid);
-	      mergeSort(a, mid + 1, end);
+	      int mid = (beg + end) / 2; // 0 + 7 / 2 
+	      mergeSort(a, beg, mid); // first half
+	      mergeSort(a, mid + 1, end); // second half
 	      merge(a, beg, mid, end);
 	    }
 	  }
